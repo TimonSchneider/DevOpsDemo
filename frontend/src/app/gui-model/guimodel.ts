@@ -53,8 +53,9 @@ export class GuiModel {
                     ]
                 },
                 {
+                    
                     "id": "ToDoForm",
-                    "title": { default: "ToDo" },
+                    "title": { default: "Titel" },
                     "url": "/todo",
                     "formFieldList": [
                         {
@@ -87,6 +88,41 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "Personalform",
+                    "title": { default: "Personalbeschriebung" },
+                    "formFieldList": [
+                        {
+                            "id":   "title",
+                            "type": "text",
+                            "name": { default: "Name" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "description",
+                            "type": "text",
+                            "name": { default: "Job Beschriebung" },
+                            "newRow": true,
+                            "maxLength": 4000,
+                            "height": 4,
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                        
+                    ]
+                },
             ],
             "pageList": [
                 {
@@ -105,7 +141,15 @@ export class GuiModel {
                             "color": "wet-asphalt",
                             "page": "toDoPage",
                             "width": 2,
-                            "newRow": true,
+                            "newRow": false,
+                        },
+                        {
+                            "type": "button",
+                            "name": { default: "Personalform" },
+                            "icon": "fa-user",
+                            "color": "wet-asphalt",
+                            "page": "personalPage",
+                            "width": 2,
                         },
                     ]
                 },
@@ -138,6 +182,35 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "personalPage",
+                    "elementList": [
+                    {
+                    "type": "backbutton",
+                    },
+                    {
+                    "type": "newButton",
+                    "name": { default: "Neues Personal" },
+                    "icon": "fa-user",
+                    "color": "green",
+                    "width": 2,
+                    "form" : {
+                    "form" : "Personalform"
+                    }
+                    },
+                    {
+                        "type": "list",
+                        "name": "personal",
+                        "icon": "fa-user",
+                        "color": "blue",
+                        "search": true,
+                        "url": "/personal",
+                        "form": {
+                            "form": "Personalform"
+                        }
+                    }
+                    ]
+                    }
             ]
         }
     };
