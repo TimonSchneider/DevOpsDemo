@@ -17,17 +17,21 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.logging.Logger;
+
+
 @CrossOrigin
 @RestController
 public class PersonalController {
-   
+    private static final Logger logger = Logger.getLogger(PersonalController.class.getName());
+
     private Map<Integer, Personal> personals = new HashMap<Integer, Personal>();
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
         this.personals.put(1,new Personal(1, "Timon Schneider", "Student"));
         this.personals.put(2,new Personal(2, "Steve Jobs", "CEO"));
-        System.out.println("Init Data");
+        logger.info("Init Data");
     }
     
     @GetMapping("/personalcount")
