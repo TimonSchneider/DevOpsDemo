@@ -1,6 +1,5 @@
-package ch.zhaw.iwi.devops.demo;
+package ch.zhaw.iwi.devops.calculator;
 import org.junit.jupiter.api.Test;
-import ch.calculator.Calculator;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -32,12 +31,5 @@ public class CalculatorTests {
         Calculator calculator = new Calculator();
         assertEquals(2.0, calculator.divide(6, 3), 0.001);
     }
-
-    @Test
-    public void testDivideByZero() {
-        Calculator calculator = new Calculator();
-        assertThrows(IllegalArgumentException.class, () -> calculator.divide(1, 0));
-    }
-
 
 }

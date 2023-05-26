@@ -1,4 +1,4 @@
-package ch.calculator;
+package ch.zhaw.iwi.devops.calculator;
 
 public class Calculator {
     public int add(int a, int b) {
