@@ -1,4 +1,5 @@
 package ch.zhaw.iwi.devops.calculator;
+import java.lang.Math;
 
 public class Calculator {
     public int add(int a, int b) {
@@ -18,5 +19,9 @@ public class Calculator {
             throw new IllegalArgumentException("Cannot divide by zero!");
         }
         return (double)a / b;
+    }
+    
+    public double calculateCircle(int radius) {
+        return 2 * radius * Math.PI;
     }
 }
