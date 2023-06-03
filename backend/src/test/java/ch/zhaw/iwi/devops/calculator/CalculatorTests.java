@@ -32,4 +32,9 @@ public class CalculatorTests {
         assertEquals(2.0, calculator.divide(6, 3), 0.001);
     }
 
+    @Test
+    public void testCircle() {
+        Calculator calculator = new Calculator();
+        assertEquals(18.85, calculator.calculateCircle(3), 0.001);
+    }
 }
